@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting to Afrivive Chat</title>
+
+  <!-- Replace with your own GA4 ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2Y380R84PM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2Y380R84PM'); // <-- your GA4 ID here
+
+    // Capture UTM parameters if any
+    const params = new URLSearchParams(window.location.search);
+    const src = params.get('utm_source') || 'unknown';
+    const med = params.get('utm_medium') || 'unknown';
+    const camp = params.get('utm_campaign') || 'gpt_launch';
+
+    // Fire event to GA
+    gtag('event', 'qr_scan', {
+      source: src,
+      medium: med,
+      campaign: camp
+    });
+
+    // Redirect after short delay
+    setTimeout(() => {
+      window.location.href = "https://chatgpt.com/g/g-68d4d02850248191857c006a42659422-rooigpt";
+    }, 400);
+  </script>
+</head>
+<body style="font-family:sans-serif;text-align:center;margin-top:40px;">
+  <h3>Redirecting you to the Afrivive Chat Assistant...</h3>
+  <p>If nothing happens, <a href="https://chatgpt.com/g/g-68d4d02850248191857c006a42659422-rooigpt">click here</a>.</p>
+</body>
+</html>
